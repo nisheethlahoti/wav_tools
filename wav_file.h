@@ -38,9 +38,7 @@ struct wav_t {
 		outfile.close();
 	}
 
-	wav_t(const wav_header_t &hdr) : header(hdr) {
-		assert(sizeof samples[0] >= header.block_align);
-	}
+	wav_t(const wav_header_t &hdr) : header(hdr) { assert(sizeof(sample_t) >= header.block_align); }
 };
 
 template <typename sample_t>
