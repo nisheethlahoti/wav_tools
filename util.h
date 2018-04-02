@@ -11,7 +11,7 @@ void binary_write(std::ostream &out, type val, size_t size = sizeof type()) {
 }
 
 static std::pair<std::string, uint32_t> readChunkInfo(std::istream &file) {
-	char temp[4] = {};
+	char temp[5]{};
 	file.read(temp, 4);
 	std::pair<std::string, uint32_t> ret = std::make_pair(std::string(temp), 0);
 	file.read(temp, 4);

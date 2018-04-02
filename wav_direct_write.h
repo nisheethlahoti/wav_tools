@@ -15,8 +15,6 @@ class wav_writer_t {
 	uint32_t count = 0;
 
    public:
-	void write_to_file(char const *filename) {}
-
 	wav_writer_t(char const *filename, wav_header_t const &hdr) : outp(filename), header(hdr) {
 		assert(sizeof sample_t() == header.block_align);
 		assert(header.block_align >= header.bits_per_sample / 8 * header.num_ch);
